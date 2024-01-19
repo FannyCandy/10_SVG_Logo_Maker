@@ -1,0 +1,6 @@
+
+        <svg viewBox="-150 -100 300 200" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="0" cy="0" r="85" fill="pink" />
+        <text x="0" y="55" font-size="55" text-anchor="middle" font-family="monospace" fill="white">svg</text>
+        </svg>
+         
