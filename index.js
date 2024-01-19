@@ -79,7 +79,6 @@ function promptUser() {
         .catch((err) => {
             console.log(err);
         });
-
 }
 
 promptUser();
@@ -97,7 +96,7 @@ promptUser();
 
 {/* <svg viewBox="-150 -100 300 200" xmlns="http://www.w3.org/2000/svg">
 
-    <polygon points="0, -85 -85, 85 85, 85" fill="lightblue" />
+    <polygon points="0, -85 -85, 85 85, 85" fill="lightgreen" />
     <circle cx="0" cy="0" r="85" fill="pink" />
     <rect x="-85" y="-85" width="170" height="170" fill="lightblue" />
 
