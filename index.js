@@ -51,14 +51,11 @@ function promptUser() {
                 type: 'input',
                 name: 'text',
                 message: 'Please enter up to 3 characters.',
-                validate: function (input) {
+                validate: (input) => {
                     if (input.length > 3 || input.length === 0) {
-                        console.log('only allow enter 1 to 3 characters')
-                        return;
-                        // promptUser();
-                    } else {
-                        return true;
+                        return 'only allow enter 1 to 3 characters';
                     }
+                    return true;
                 }
             },
             {
@@ -79,12 +76,6 @@ function promptUser() {
             }
         ])
         .then((answers) => generateContent(answers))
-        // try {
-        //     generateContent(answers)
-        //     console.log("logo generted");
-        // } catch (err) {
-        //     console.log(err);
-        // }
         .catch((err) => {
             console.log(err);
         });
@@ -92,8 +83,6 @@ function promptUser() {
 }
 
 promptUser();
-
-
 
 
 // text -- enter up to three characters
