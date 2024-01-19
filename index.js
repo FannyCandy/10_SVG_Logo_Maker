@@ -4,11 +4,11 @@ const Text = require("./lib/text");
 const { Triangle, Circle, Square } = require("./lib/shapes");
 
 function generateContent(answers) {
-    const content = '';
+    let content = '';
     const text = new Text(answers.text, answers.textColor);
 
     if (answers.shape === 'Triangle') {
-        const triangle = new Triangle();
+        const triangle = new Triangle(answers.shapeColor);
         content += `
         <svg viewBox="-150 -100 300 200" xmlns="http://www.w3.org/2000/svg">
         ${triangle.render()}
@@ -16,7 +16,7 @@ function generateContent(answers) {
         </svg>
          `
     } else if (answers.shape === 'Circle') {
-        const circle = new Circle();
+        const circle = new Circle(answers.shapeColor);
         content += `
         <svg viewBox="-150 -100 300 200" xmlns="http://www.w3.org/2000/svg">
         ${circle.render()}
@@ -24,7 +24,7 @@ function generateContent(answers) {
         </svg>
          `
     } else if (answers.shape === 'Square') {
-        const square = new Square();
+        const square = new Square(answers.shapeColor);
         content += `
         <svg viewBox="-150 -100 300 200" xmlns="http://www.w3.org/2000/svg">
         ${square.render()}
@@ -39,7 +39,7 @@ function generateContent(answers) {
          `
     }
 
-    fs.writeFile(`"./examples/${answers.shape}_logo.svg"`, content, (err) => {
+    fs.writeFile(`./examples/${answers.shape}_logo.svg`, content, (err) => {
         err ? console.log(err) : console.log(`"${answers.shape}_log.svg generated in examples folder."`);
     });
 }
@@ -54,7 +54,8 @@ function promptUser() {
                 validate: function (input) {
                     if (input.length > 3 || input.length === 0) {
                         console.log('only allow enter 1 to 3 characters')
-                        return false;
+                        return;
+                        // promptUser();
                     } else {
                         return true;
                     }
