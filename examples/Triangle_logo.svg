@@ -1,6 +1,6 @@
 
         <svg viewBox="-150 -100 300 200" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="0, -85 -85, 85 85, 85" fill="lightblue" />
+        <polygon points="0, -85 -85, 85 85, 85" fill="lightgreen" />
         <text x="0" y="55" font-size="55" text-anchor="middle" font-family="monospace" fill="white">svg</text>
         </svg>
          
